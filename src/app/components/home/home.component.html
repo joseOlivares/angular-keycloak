@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-12">
     <div class="text-center mt-5">
-      <h1>Home para usuarios autenticados</h1>
-      <button type="button" class="btn btn-success btn-lg mt-3">Success</button>
+      <h1>Su usuario se encuentra autenticado en keyCloack</h1>
+      <button type="button" class="btn btn-success btn-lg m-3" [routerLink]="['/private-page']">Ir a página privada</button>
+      <button type="button" class="btn btn-danger btn-lg m-3" (click)="logout()">Logout</button>
     </div>
 
   </div>

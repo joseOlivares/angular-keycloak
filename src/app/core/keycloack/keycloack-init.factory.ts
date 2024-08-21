@@ -12,11 +12,12 @@ export function initializeKeycloak(keycloak: KeycloakService) {
                 clientId: environment.keycloak.clientId,
             },
             initOptions: {
-                //checkLoginIframe: false,  //TODO:validar si debe ser true
-                onLoad: 'check-sso',
+                checkLoginIframe: false,
+                onLoad: 'check-sso', // 'login-required' , 'check-sso'
                 silentCheckSsoRedirectUri:
                     window.location.origin + '/assets/silent-check-sso.html'
             },
-            enableBearerInterceptor: true  //TODO:validar si es necesario
+            enableBearerInterceptor: true,
+           // bearerPrefix: 'Bearer ',  //no se necesita
         });
 }

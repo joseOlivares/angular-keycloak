@@ -10,18 +10,18 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    /*{
+    /**/{
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,
       deps: [KeycloakService]
     },
+    KeycloakService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass: KeycloakBearerInterceptor,
       multi: true
     },
-    KeycloakService,
-    provideHttpClient(withInterceptorsFromDi())*/
+    provideHttpClient(withInterceptorsFromDi())
   ]
 };
