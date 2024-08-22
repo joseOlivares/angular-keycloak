@@ -1,4 +1,37 @@
-<div class="container">
-  <router-outlet />
-</div>
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home"  >GBM Keycloak - Angular</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end pe-5"  id="navbarCollapse">
+        <ul class="navbar-nav  mb-2 mb-md-0 ">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/private-page" routerLinkActive="active">Private page</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+<main class="flex-shrink-0 mt-5">
+  <div class="container pb-4">
+    <router-outlet />
+  </div>
+</main>
+<footer class="footer py-3  bg-light mt-auto"  >
+  <div class="container">
+    <div class="text-center">
+      <span class="text-muted">jolivares © Version 1.0</span>
+    </div>
+
+  </div>
+</footer>
+<ng-http-loader></ng-http-loader>
 

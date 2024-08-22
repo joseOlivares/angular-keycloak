@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
+
 
 @Component({
   selector: 'app-please-login',
@@ -10,13 +12,18 @@ import { KeycloakService } from 'keycloak-angular';
 })
 export class PleaseLoginComponent {
 
-  keycloackService = inject(KeycloakService);
+  keycloakService=inject(KeycloakService);
 
+  private route=inject(ActivatedRoute); //ruta activa
 
+  login() {
+    const urlPrevia=this.route.snapshot.queryParams['returnUrl'] || '/';//recibimos el param del AuthGuard
+    console.log(urlPrevia);
 
-  keycloackLogin() {
-    this.keycloackService.login();
+    //reemplazamos el historial de navegación por la url previa
+    //url previa es la que disparó el Guard y nos envió a please-login
+    history.replaceState(null, '', urlPrevia);
+
+    this.keycloakService.login();
   }
-
-
 }

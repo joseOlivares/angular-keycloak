@@ -13,8 +13,8 @@ export const isloggedGuard: CanActivateFn = async (route, state) => {
   console.log('is Logged: ', isLoggedIn)
 
   if(isLoggedIn) {
-    router.navigate(['home']); //lo enviamos a home
+    router.navigate([state.url]); //si está logueado lo envimamos a la página desde donde se llamo
     return false;
    }
-    return isLoggedIn;
+    return true;
 };

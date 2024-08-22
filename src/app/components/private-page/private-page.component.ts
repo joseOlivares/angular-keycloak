@@ -22,12 +22,8 @@ export class PrivatePageComponent {
     this.apiService.postData().subscribe(resp=>{
       this.response = JSON.stringify(resp);
       console.log(resp);
-    })
-    /*
-    this.apiService.getData().subscribe(data => {
-      this.response = JSON.stringify(data);
-      console.log(data);
-    }); */
+    });
+
    }
 
 
